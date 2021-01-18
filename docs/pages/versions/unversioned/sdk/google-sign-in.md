@@ -103,7 +103,7 @@ export default class AuthScreen extends React.Component {
   signInAsync = async () => {
     try {
       await GoogleSignIn.askForPlayServicesAsync();
-      const { type, user } = await GoogleSignIn.signInAsync();
+      const { type } = await GoogleSignIn.signInAsync();
       if (type === 'success') {
         this._syncUserWithStateAsync();
       }
@@ -133,7 +133,7 @@ Before using the API we first need to call `GoogleSignIn.initAsync({ ... })` whi
 ```js
 try {
   await GoogleSignIn.initAsync({
-    // You may ommit the clientId when the firebase `googleServicesFile` is configured
+    // You may ommit the clientId when the firebase `googleServicesFile` is configured 
     clientId: '<YOUR_IOS_CLIENT_ID>',
     // Provide other custom options...
   });
